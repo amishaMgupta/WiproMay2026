@@ -40,6 +40,13 @@ Component Life cycle and basic building blocks of SPA Framework
   - put the logic 
   - create an array of errors
   - add Error and helptext in UI textboxs
+# Ref :-
+  - use DOM element directly
 
+# prop-type:-
+ - used to validate the props passed to comp.
+ - catch the errors
+ - improve the readabality
+ - Validate data types
 # Homework :- Update and delete product.
 

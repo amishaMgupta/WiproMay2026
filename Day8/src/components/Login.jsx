@@ -1,11 +1,15 @@
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { useState } from 'react';
+import { useState , useRef} from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const navigate = useNavigate();
+    const inputRef = useRef();
+    const focusInput = () => {
+        inputRef.current.focus();
+    }
     const User = {
         id : 0,
         username : "",
@@ -45,8 +49,9 @@ function Login() {
     <div>
         <br></br>
         <h1>Login</h1>
-       
+         <input type="text" ref = {inputRef} placeholder='check'/>
          <TextField
+         
           required
           id="outlined-required"
           label="User Name"
@@ -78,6 +83,8 @@ function Login() {
         <br></br>
         
        <Button variant="outlined" onClick = {handleSubmit}>Submit</Button>
+      
+       <button onClick={focusInput}>Focus Input</button>
     </div>
   )
 }
