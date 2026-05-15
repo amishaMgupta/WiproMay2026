@@ -1,33 +1,29 @@
 import type { User } from "../model/user";
 //
-    const login =async (email:string,password:string):Promise<string> =>{
-        let result:string = "Failed";
-        let counter:number =0;
-        await fetch("http://localhost:3000/users")
-        .then((res) => res.json())
-        .then((data) =>{
-            data.forEach((user:User) => {
-                if(user.email === email && user.password === password){
-                    counter++;
-                }
-            })
-            if(counter > 0){
-                result = "Success";
-                console.log("result = ",result);
+export const login =async (email:string,password:string):Promise<User> =>{
+    let result:User = {id:0,firstName:"",lastName:"",email:"",password:""};
+    await fetch("http://localhost:3000/users").then((res) => res.json())
+    .then((data) =>{
+        data.forEach((user:User) => {
+            if(user.email === email && user.password === password){
+                result = user;
             }
-            
         })
-        console.log("result = ",result);
-        return result;
+    })
+    return result;
+}
+export const getAll = async():Promise<User[]> =>{
+    const result:User[] = [];
+    
+    await fetch("http://localhost:3000/users").then((res) => res.json())
+    .then((data) =>{
+        result.push(...data);
+    })
+    return result;
     }
-
-// const getAll = () =>{
-
-// }
 // const add= () =>{
 
 // }
 // const update = () =>{
 
 // }
-export default login

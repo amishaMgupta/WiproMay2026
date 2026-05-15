@@ -2,16 +2,24 @@
 import TextField from '@mui/material/TextField'; 
 import Button from '@mui/material/Button';
 import { useState } from 'react';
-import login from '../service/UserService';
-// import type {User} from "../model/user";
+import { useNavigate } from "react-router-dom";
+import { login } from '../service/UserService';
+import type {User} from "../model/user";
 import "./Login.css";
+import ROUTES from "../../routes/routes"
+
 function Login(){
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const navigate = useNavigate();
    const handleOnClick = async () => {
-        let result : string;
+        let result : User;
         result= await login(email,password);
-        console.log(result);
+        if(result.firstName === "admin")
+            navigate(ROUTES.ADMINDASHBOARD)
+        else
+            navigate(ROUTES.DASHBOARD)
+        
     }
 
 

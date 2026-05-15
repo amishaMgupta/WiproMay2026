@@ -1,6 +1,6 @@
 function Dashboard (){
-    return(
-        <div> <h1>Hello Dashboard</h1>  
-        </div>)
+    return (
+        <div>Hello Dashboard</div>
+    )
 }
 export default Dashboard;

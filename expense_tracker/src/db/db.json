@@ -2,8 +2,17 @@
     "users":[
         {
             "id":1,
-            "email":"xyz@gmail.com",
-            "password":"xyz123"
+            "firstName":"user",
+            "lastName":"user",
+            "email":"user@gmail.com",
+            "password":"user123"
+        },
+        {
+            "id":2,
+            "firstName":"admin",
+            "lastName":"admin",
+            "email":"admin@gmail.com",
+            "password":"admin123"
         }
     ]
 }

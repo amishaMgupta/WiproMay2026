@@ -1,5 +1,6 @@
-export const ROUTES ={
-  HOME:'/',
-  LOGIN:'/login',
-  DASHBOARD:'/dashboard'
-} as const
+const ROUTES ={
+  LOGIN:'/',
+  DASHBOARD:'/dashboard',
+  ADMINDASHBOARD:'/adminDashboard'
+}
+export default ROUTES;
