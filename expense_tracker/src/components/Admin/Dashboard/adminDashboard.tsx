@@ -1,7 +1,7 @@
 import {getAll} from "../../service/UserService"
 import type { User} from '../../model/user'
 import { useEffect, useState } from "react";
-// import UserCard from "../User/UserCard";
+import UserCard from "../User/UserCard";
 
 function AdminDashboard (){
     const [users,setUsers] = useState<User[]>([])
@@ -13,7 +13,7 @@ function AdminDashboard (){
         <div>
             {users.map((user:User) => ( 
                 <>
-                <h1>{user.firstName}</h1>
+               <UserCard user={user} key= {user.id}/>
                 </>
             ))
             }
