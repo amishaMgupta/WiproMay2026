@@ -1,3 +1,4 @@
+// using the context
 import { useContext } from "react";
 import { UserContext } from "./UserContext";
 function Profile(){
