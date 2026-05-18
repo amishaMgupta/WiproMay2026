@@ -41,7 +41,11 @@ Steps :-
        - Select
    - TCL
       - Transaction
-      
+To install :- https://dev.mysql.com/downloads/installer/
+# what is database
+   - collection of interrelated tables
+   - SchoolManagmentSystem
+
 Normalization
 Joins
 Subquery
