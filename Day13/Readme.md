@@ -22,3 +22,38 @@ Steps :-
    - use to navigate the the page which we want to load
    
 6. Higher order components
+
+# Day 13
+- Introduction to MySQL
+   - RDBMS 
+   - Stores the data in the form of Rows and coloms
+- Basic Select and CRUD operations
+   - DDL :- 
+       - create
+       - Alter
+       - Drop
+       - Truncate
+   - DML :- 
+       - Insert
+       - Update
+       - Delete
+   - DQL
+       - Select
+   - TCL
+      - Transaction
+      
+Normalization
+Joins
+Subquery
+Aggregate Functions
+Date function
+Query optimization Basics
+Indexes
+Query optimization using Indexes
+Introduction to NoSQL
+Introduction to MongoDB
+MongoDB CRUD Operations
+MongoDB Data Modeling
+Indexing and Query Optimization
+Introduction to MongoDB Atlas
+Aggregation Framework in MongoDB
