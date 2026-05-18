@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './App.css'
 import type { RootState } from './redux/store';
 import { useDispatch } from 'react-redux'
-import { increment } from './redux/counterSlice';
+import { decriment, increment } from './redux/counterSlice';
 import {useTitle,useFetch} from './hook/useTitle';
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +17,9 @@ function App() {
     <><h1>{count}</h1>
      <button onClick={() =>dispatch(increment())}>
       Increment
+     </button>
+     <button onClick={() =>dispatch(decriment())}>
+      dec
      </button>
     </>
   )

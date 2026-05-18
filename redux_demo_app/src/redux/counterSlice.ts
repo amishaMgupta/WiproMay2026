@@ -7,8 +7,11 @@ const counterSlicer = createSlice({
     reducers:{
         increment:(state)=>{
             state.count += 1 
+        },
+        decriment:(state)=>{
+            state.count -= 1
         }
     }
     })
-export const {increment} = counterSlicer.actions
+export const {increment,decriment} = counterSlicer.actions
 export default counterSlicer.reducer
