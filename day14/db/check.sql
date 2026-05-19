@@ -209,8 +209,9 @@ Select deptId from department where department in ('HR','IT');
 START TRANSACTION;
 
 update employee set salary = salary -1000 where empId = 2;
+savepoint step1;
 update employee set salary = salary + 1000 where empId = 5;
-Rollback
+Rollback to step1;
 Commit; 
 select * from employee
 
