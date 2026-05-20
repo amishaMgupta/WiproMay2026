@@ -47,18 +47,53 @@ Rollback to step1;
 Commit; 
 select * from employee
 
-# Nodejs
-- What is Node.js?
-- History of Node.js
-- Features and advantages
-- Installing Node.js
-- Understanding npm (Node Package Manager)
-- Creating a simple Node.js application
-- fs (File System)
-- http/https (HTTP/HTTPS Servers and Clients)
-- path (File and Directory Paths)
-- events (EventEmitter)
-- Callbacks
-- Promises
-- Async/Await
+# Query Optimization
+- make query run fasterand use less CPU,memory and disk I/O
+- Reduce texecution time
+- reduce the resorces used
+- Handle large dataset
+
+Common Problems whgich you should avoid
+1. Missing Indexes:-
+   ### bad query:-
+     select * from employee where department  = "IT"
+    ### Solution
+     create index idx_dept on employee(department);
+
+    benefit
+    - faster searching 
+    - Aviod full scan
+2. using Select *
+    ### Bad Query
+    Select * from employee
+    ### Solution
+    select empName from employee
+
+    benefit
+    - less Menory usage
+    - faster execution
+3. functions on Indexed Columns
+   ### bad Query
+   select * from employee where year(join_date) = 2025
+   ### Solution 
+   select * from employee where join_date between '2025-01-01' and '2025-12-31'
+
+     benefit
+       - index work properly
+4. use of wildcards
+ ### bad Query
+    select * from employee where name like %john
+### Solution 
+    Select *n from employee where name like John%
+5. Too many Joins
+   benefit
+   - large temporary table
+   - High CPU
+
+6. Subqueries Causing repeated Execution
+
+Tools to understand Query Optimization
+- Explain
+
+
 
