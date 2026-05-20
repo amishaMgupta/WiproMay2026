@@ -1,5 +1,5 @@
 function auth(req,res,next){
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     if(isLoggedIn){
         console.log("User is logged in");
         next();
