@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
+const cors= require('cors');
 const port = 3000
 
 // call index.html as first page loaded
 app.use(express.static('public'))
 app.use(express.json())
+app.use(cors())
 
 // get user name and password from UI for Login
 app.get("/users",async(req,res)=>{
