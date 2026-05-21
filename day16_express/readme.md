@@ -57,3 +57,26 @@ app.listen(3000,()=>{
     console.log("Server is running");
     
 })
+
+# Routes in Express
+- seperation of the application in different modules /folders
+- helps to make my code clean
+      routers
+        - userRouter.js
+        - productRouter.js
+      Controllers
+      Services
+      middlewares
+      config
+      public
+      util
+
+
+  Flow of Express Application
+     Router
+       ↓  
+     Controller
+       ↓  
+     Service
+       ↓  
+     api/db

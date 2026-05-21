@@ -1,14 +1,20 @@
-import { useState } from 'react'
+import { useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import './login.css'
 import login from '../../service/login'
 function Login(){
     const [userName,setUserName] = useState("")
     const [password,setPassword] = useState("")
+    const navigate = useNavigate();
     const handleOnclick = () => {
-        login(userName,password)
+        const result = login(userName,password)
+        result.then(data => {
+                if(data.message == "successfull")
+                     navigate("/displayExp")
+            })
         setUserName("")
         setPassword("")
-
+        
     }
     return (
         <div id = "login">

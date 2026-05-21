@@ -1,7 +1,8 @@
 //import './App.css'
 import Header from './components/header/header'
 import Login from './components/login/login'
-
+import DisplayExpense from './components/dashboard/displayExpense'
+import { Route,Routes } from 'react-router-dom'
 
 function App() {
 
@@ -9,8 +10,10 @@ function App() {
   return (
     <>
     <Header/>
-    <Login/>
-     
+    <Routes>
+      <Route path = "/" element={<Login/>}></Route>
+      <Route path = "/displayExp" element = {<DisplayExpense/>}></Route>
+    </Routes>   
     </>
   )
 }
