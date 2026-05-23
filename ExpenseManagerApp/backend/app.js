@@ -4,6 +4,7 @@ const cors= require('cors');
 const port = 3000
 // configuring the router
 const expenseRouter = require('./routes/expenseRoutes/expenseRoutrer')
+const userRouter = require('./routes/userRoutes/userRouter')
 
 // call index.html as first page loaded
 app.use(express.static('public'))
@@ -11,26 +12,10 @@ app.use(express.json())
 app.use(cors())
 // Calling Router
 app.use("/api/expense",expenseRouter)
+app.use("/api/users",userRouter)
 
 //get user name and password from UI for Login
-app.get("/users",async(req,res)=>{
-    mydata = req.query;
-    console.log(mydata.username);
-    let messager = {"message":"failed"};
-   await fetch("http://localhost:3001/users")
-    .then(res=>res.json())
-    .then(data=>{
 
-       data.map(ele=>{
-        if(mydata.username == ele.userName && mydata.password == ele.password){
-            console.log("inside if");
-            message= {"message":"successfull"};
-           }
-        })
-       });
-      res.send(message);
-      
-    })
 
 app.listen(port,()=>{
     console.log(`Server is running on port:- ${port}`)
